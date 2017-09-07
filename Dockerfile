@@ -66,13 +66,13 @@ ENV LANG='en_US.UTF-8' LC_ALL='en_US.UTF-8'
 # Set user to Logstash
 USER 1000
 
+WORKDIR ${LOGSTASH_HOME}
+
 # Download and install X-Pack for Logstash
 RUN \
   curl -o ${X_PACK} && \
-  cd ${LOGSTASH_HOME} && logstash-plugin install x-pack && \
+  bin/logstash-plugin install x-pack && \
   rm x-pack-${X_PACK_VERSION}.zip
-
-WORKDIR ${LOGSTASH_HOME}
 
 ENTRYPOINT [ "bin/logstash", "-f pipeline/logstash.conf" ]
 
