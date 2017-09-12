@@ -3,7 +3,7 @@ LABEL maintainer sayeedch
 
 # Path to latest Logstash version
 ENV LS_PATH=https://artifacts.elastic.co/downloads/logstash/logstash-5.5.2.tar.gz
-    X_PACK=https://artifacts.elastic.co/downloads/packs/x-pack/x-pack-5.5.2.zip
+ENV X_PACK=https://artifacts.elastic.co/downloads/packs/x-pack/x-pack-5.5.2.zip
 
 ENV LOGSTASH_HOME=/opt/logstash
 
